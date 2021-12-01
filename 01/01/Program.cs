@@ -1,6 +1,6 @@
 ﻿int increase = 0;
 int previous = 0;
-int rollingAverage = 1;
+int rollingAverage = 3;
 
 string[] lines = System.IO.File.ReadAllLines(@"Input.txt");
 for (int i = 0; i <= lines.Length - rollingAverage; i++) {
