@@ -39,13 +39,6 @@ class Program {
             if (i >= 5) {
                 for (int j = 0;j < boards.Count;j++) {
                     if (wonBoards[j] == 1) continue; // Skip boards that already won
-
-                    // Check diagonals
-                    int sumD1 = 0, sumD2 = 0;
-                    for (int k = 0; k < boards[i].Count; k++) {
-                        sumD1 += marker[j, k, k];
-                        sumD2 += marker[j, 4 - k, 4 - k];
-                    }
                     
                     for (int k = 0; k < boards[j].Count; k++) {
 
@@ -56,7 +49,7 @@ class Program {
                             sumV += marker[j, l, k];
                         }
 
-                        if (sumH == 5 || sumV == 5 || sumD1 == 5 || sumD2 == 5) {
+                        if (sumH == 5 || sumV == 5) {
                             // Game Over
                             Console.WriteLine($"Game Over for Board #{j}");
                             wonBoards[j] = 1;
