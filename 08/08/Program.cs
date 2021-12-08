@@ -8,7 +8,7 @@ class Program {
 
         string[] lines = System.IO.File.ReadAllLines(@"Input.txt");
 
-        int sum = 0;
+        int p2 = 0;
 
         for (int i = 0; i < lines.Length; i++) {
             string[] input = lines[i].Split(" | ")[0].Split(" ");
@@ -20,6 +20,9 @@ class Program {
                 if (len == 2 || len == 4 || len == 3 || len == 7) p1++;
             }
 
+            Console.WriteLine($"Solution p1: {p1}");
+
+            // p2;
             string[] patterns = new string[10];
 
             // Easy Base Patterns
@@ -73,13 +76,11 @@ class Program {
 
                 number += (int)Math.Pow(10, output.Length - j - 1) * pos;
                 
-                //Console.WriteLine(pos);
             }
-            Console.WriteLine(number);
-            sum += number;
+            p2 += number;
 
         }
-        Console.WriteLine($"Solution p2: {sum}");
+        Console.WriteLine($"Solution p2: {p2}");
 
         return;
         
